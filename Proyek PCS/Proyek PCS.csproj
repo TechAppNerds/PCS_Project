@@ -50,11 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBAAJadwalMatakuliah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBAAJadwalMatakuliah.Designer.cs">
+      <DependentUpon>FormBAAJadwalMatakuliah.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBAAHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBAAHome.Designer.cs">
       <DependentUpon>FormBAAHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBAADosen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBAADosen.Designer.cs">
+      <DependentUpon>FormBAADosen.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -62,13 +74,28 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBAAMahasiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBAAMahasiswa.Designer.cs">
+      <DependentUpon>FormBAAMahasiswa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBAAHome.resx">
       <DependentUpon>FormBAAHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBAAJadwalMatakuliah.resx">
+      <DependentUpon>FormBAAJadwalMatakuliah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBAADosen.resx">
+      <DependentUpon>FormBAADosen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBAAMahasiswa.resx">
+      <DependentUpon>FormBAAMahasiswa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
