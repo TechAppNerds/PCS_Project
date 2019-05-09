@@ -77,6 +77,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(12, 115);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(668, 254);
             this.dataGridView2.TabIndex = 31;
             // 
@@ -257,6 +258,7 @@
             this.btnLogout.TabIndex = 52;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnFormMahasiswa
             // 
@@ -284,6 +286,7 @@
             this.btnBackhome.TabIndex = 55;
             this.btnBackhome.Text = "Back Home";
             this.btnBackhome.UseVisualStyleBackColor = true;
+            this.btnBackhome.Click += new System.EventHandler(this.btnBackhome_Click);
             // 
             // label8
             // 
@@ -371,6 +374,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Name = "FormBAADosen";
             this.Text = "FormDosen";
+            this.Load += new System.EventHandler(this.FormBAADosen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

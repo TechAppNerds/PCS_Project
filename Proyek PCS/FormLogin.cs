@@ -13,10 +13,13 @@ namespace Proyek_PCS
 {
     public partial class FormLogin : Form
     {
-        OracleConnection conn;
+        public static OracleConnection conn;
         public FormLogin()
         {
             InitializeComponent();
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = conn;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,9 +36,9 @@ namespace Proyek_PCS
                     conn.Close();
                 }
                 conn.Open();
-                //this.Hide(); new FormPilihCabang().ShowDialog();
+                this.Hide(); new FormBAAHome().ShowDialog();
                 conn.Close();
-                //this.Close();
+                this.Close();
             }
             catch (Exception ex)
             {

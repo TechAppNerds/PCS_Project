@@ -131,6 +131,7 @@
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label2
             // 
@@ -321,6 +322,7 @@
             this.btnBackhome.TabIndex = 30;
             this.btnBackhome.Text = "Back Home";
             this.btnBackhome.UseVisualStyleBackColor = true;
+            this.btnBackhome.Click += new System.EventHandler(this.btnBackhome_Click);
             // 
             // btnFormMahasiswa
             // 
@@ -448,6 +450,7 @@
             this.Controls.Add(this.btnInsert);
             this.Name = "FormBAAJadwalMatakuliah";
             this.Text = "FormBAAHome";
+            this.Load += new System.EventHandler(this.FormBAAJadwalMatakuliah_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();

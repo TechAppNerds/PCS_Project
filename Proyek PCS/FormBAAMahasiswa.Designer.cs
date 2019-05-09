@@ -77,6 +77,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 115);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(668, 356);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -98,6 +99,7 @@
             this.btnBackhome.TabIndex = 59;
             this.btnBackhome.Text = "Back Home";
             this.btnBackhome.UseVisualStyleBackColor = true;
+            this.btnBackhome.Click += new System.EventHandler(this.btnBackhome_Click);
             // 
             // btnFormMataKuliah
             // 
@@ -125,6 +127,7 @@
             this.btnLogout.TabIndex = 56;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // label1
             // 
@@ -429,7 +432,7 @@
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 95;
             // 
-            // FormMahasiswa
+            // FormBAAMahasiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -474,8 +477,9 @@
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FormMahasiswa";
+            this.Name = "FormBAAMahasiswa";
             this.Text = "FormMahasiswa";
+            this.Load += new System.EventHandler(this.FormBAAMahasiswa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

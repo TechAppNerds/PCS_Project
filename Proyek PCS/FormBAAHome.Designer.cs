@@ -41,6 +41,7 @@
             this.btnForm_Jadwal_Matakuliah.TabIndex = 0;
             this.btnForm_Jadwal_Matakuliah.Text = "Form Jadwal Matakuliah";
             this.btnForm_Jadwal_Matakuliah.UseVisualStyleBackColor = true;
+            this.btnForm_Jadwal_Matakuliah.Click += new System.EventHandler(this.btnForm_Jadwal_Matakuliah_Click);
             // 
             // btnForm_Dosen
             // 
@@ -50,6 +51,7 @@
             this.btnForm_Dosen.TabIndex = 1;
             this.btnForm_Dosen.Text = "Form Dosen";
             this.btnForm_Dosen.UseVisualStyleBackColor = true;
+            this.btnForm_Dosen.Click += new System.EventHandler(this.btnForm_Dosen_Click);
             // 
             // btnForm_Mahasiswa
             // 
@@ -59,6 +61,7 @@
             this.btnForm_Mahasiswa.TabIndex = 2;
             this.btnForm_Mahasiswa.Text = "Form Mahasiswa";
             this.btnForm_Mahasiswa.UseVisualStyleBackColor = true;
+            this.btnForm_Mahasiswa.Click += new System.EventHandler(this.btnForm_Mahasiswa_Click);
             // 
             // FormBAAHome
             // 
