@@ -19,7 +19,6 @@ namespace Proyek_PCS
             InitializeComponent();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,6 +43,11 @@ namespace Proyek_PCS
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
