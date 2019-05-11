@@ -14,21 +14,22 @@ namespace Proyek_PCS
     public partial class FormBAAHome : Form
     {
         public static OracleConnection conn;
+        public static string dts, userid, pass;
         public FormBAAHome()
         {
             InitializeComponent();
             conn = new OracleConnection();
-            conn.ConnectionString= "Data Source=orcl;User ID=BAA;password=BAA";
+            conn.ConnectionString= "Data Source="+dts+";User ID="+userid+";password="+pass+"";
         }
 
         private void btnForm_Jadwal_Matakuliah_Click(object sender, EventArgs e)
         {
             try
             {
-                conn.Open();
-                this.Hide(); new FormBAAJadwalMatakuliah().ShowDialog();
-                conn.Close();
-                this.Close();
+                conn.Open(); FormBAAMasterMatakuliah.dts = dts;
+                FormBAAMasterMatakuliah.userid = userid; FormBAAMasterMatakuliah.pass = pass;
+                this.Hide(); new FormBAAMasterMatakuliah().ShowDialog();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {
@@ -40,10 +41,10 @@ namespace Proyek_PCS
         {
             try
             {
-                conn.Open();
+                conn.Open(); FormBAADosen.dts = dts;
+                FormBAADosen.userid = userid; FormBAADosen.pass = pass;
                 this.Hide(); new FormBAADosen().ShowDialog();
-                conn.Close();
-                this.Close();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {
@@ -55,10 +56,10 @@ namespace Proyek_PCS
         {
             try
             {
-                conn.Open();
+                conn.Open(); FormBAAMahasiswa.dts = dts;
+                FormBAAMahasiswa.userid = userid; FormBAAMahasiswa.pass = pass;
                 this.Hide(); new FormBAAMahasiswa().ShowDialog();
-                conn.Close();
-                this.Close();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {

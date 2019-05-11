@@ -36,9 +36,9 @@ namespace Proyek_PCS
                     conn.Close();
                 }
                 conn.Open();
+                FormBAAHome.dts = textBox1.Text; FormBAAHome.userid = textBox2.Text; FormBAAHome.pass = textBox3.Text;
                 this.Hide(); new FormBAAHome().ShowDialog();
-                conn.Close();
-                this.Close();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {

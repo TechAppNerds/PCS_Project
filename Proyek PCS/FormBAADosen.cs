@@ -14,6 +14,7 @@ namespace Proyek_PCS
     public partial class FormBAADosen : Form
     {
         public static OracleConnection conn;
+        public static string dts, userid, pass;
         public FormBAADosen()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace Proyek_PCS
 
         private void FormBAADosen_Load(object sender, EventArgs e)
         {
-            conn.ConnectionString = "Data Source=orcl;User ID=BAA;password=BAA";
+            conn.ConnectionString = "Data Source=" + dts + ";User ID=" + userid + ";password=" + pass + "";
             try
             {
                 conn.Open();
@@ -36,8 +37,7 @@ namespace Proyek_PCS
         public void refresh()
         {
             OracleDataAdapter da = new OracleDataAdapter("SELECT*FROM DOSEN", conn);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
+            DataSet ds = new DataSet(); da.Fill(ds);
             dataGridView2.DataSource = ds.Tables[0];
             //dataGridView2.DataSource = ds.Tables[0].Columns[0];
         }
@@ -46,10 +46,9 @@ namespace Proyek_PCS
         {
             try
             {
-                this.Hide();
-                new FormBAAHome().ShowDialog();
-                conn.Close();
-                this.Close();
+                FormBAAHome.dts = dts; FormBAAHome.userid = userid; FormBAAHome.pass = pass;
+                this.Hide(); new FormBAAHome().ShowDialog();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {
@@ -61,10 +60,8 @@ namespace Proyek_PCS
         {
             try
             {
-                this.Hide();
-                new FormLogin().ShowDialog();
-                conn.Close();
-                this.Close();
+                this.Hide(); new FormLogin().ShowDialog();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {
@@ -76,10 +73,9 @@ namespace Proyek_PCS
         {
             try
             {
-                this.Hide();
-                new FormBAAJadwalMatakuliah().ShowDialog();
-                conn.Close();
-                this.Close();
+                FormBAAMasterMatakuliah.dts = dts; FormBAAMasterMatakuliah.userid = userid; FormBAAMasterMatakuliah.pass = pass;
+                this.Hide(); new FormBAAMasterMatakuliah().ShowDialog();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {
@@ -91,10 +87,9 @@ namespace Proyek_PCS
         {
             try
             {
-                this.Hide();
-                new FormBAAMahasiswa().ShowDialog();
-                conn.Close();
-                this.Close();
+                FormBAAMahasiswa.dts = dts; FormBAAMahasiswa.userid = userid; FormBAAMahasiswa.pass = pass;
+                this.Hide(); new FormBAAMahasiswa().ShowDialog();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {

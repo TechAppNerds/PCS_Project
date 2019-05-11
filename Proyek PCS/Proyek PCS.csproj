@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBAAMasterMatakuliah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBAAMasterMatakuliah.Designer.cs">
+      <DependentUpon>FormBAAMasterMatakuliah.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBAAJadwalMatakuliah.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormBAAHome.resx">
       <DependentUpon>FormBAAHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBAAMasterMatakuliah.resx">
+      <DependentUpon>FormBAAMasterMatakuliah.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBAAJadwalMatakuliah.resx">
       <DependentUpon>FormBAAJadwalMatakuliah.cs</DependentUpon>

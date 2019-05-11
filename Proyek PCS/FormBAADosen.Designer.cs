@@ -68,9 +68,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(277, 87);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(147, 25);
+            this.label13.Size = new System.Drawing.Size(146, 25);
             this.label13.TabIndex = 32;
-            this.label13.Text = "Jadwal Dosen";
+            this.label13.Text = "Master Dosen";
             // 
             // dataGridView2
             // 
@@ -375,7 +375,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dataGridView2);
             this.Name = "FormBAADosen";
-            this.Text = "FormDosen";
+            this.Text = "FormMasterDosen";
             this.Load += new System.EventHandler(this.FormBAADosen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
