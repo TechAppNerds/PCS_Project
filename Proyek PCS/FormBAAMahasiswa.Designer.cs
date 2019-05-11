@@ -109,6 +109,7 @@
             this.btnFormMataKuliah.TabIndex = 58;
             this.btnFormMataKuliah.Text = "Form MataKuliah";
             this.btnFormMataKuliah.UseVisualStyleBackColor = true;
+            this.btnFormMataKuliah.Click += new System.EventHandler(this.btnFormMataKuliah_Click);
             // 
             // btnFormDosen
             // 
@@ -118,6 +119,7 @@
             this.btnFormDosen.TabIndex = 57;
             this.btnFormDosen.Text = "Form Dosen";
             this.btnFormDosen.UseVisualStyleBackColor = true;
+            this.btnFormDosen.Click += new System.EventHandler(this.btnFormDosen_Click);
             // 
             // btnLogout
             // 

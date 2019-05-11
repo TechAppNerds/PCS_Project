@@ -71,5 +71,35 @@ namespace Proyek_PCS
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnFormMataKuliah_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                new FormBAAJadwalMatakuliah().ShowDialog();
+                conn.Close();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFormMahasiswa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                new FormBAAMahasiswa().ShowDialog();
+                conn.Close();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

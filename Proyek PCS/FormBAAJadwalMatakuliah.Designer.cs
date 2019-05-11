@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnInsert = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -44,15 +43,12 @@
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -62,10 +58,13 @@
             this.btnFormDosen = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -79,6 +78,7 @@
             this.btnInsert.TabIndex = 0;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // dataGridView1
             // 
@@ -88,22 +88,9 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(668, 303);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(686, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Kode MataKuliah :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(780, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // btnUpdate
             // 
@@ -113,6 +100,7 @@
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -122,6 +110,7 @@
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnLogout
             // 
@@ -144,7 +133,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(786, 138);
+            this.textBox2.Location = new System.Drawing.Point(786, 133);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(140, 20);
             this.textBox2.TabIndex = 9;
@@ -152,7 +141,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(686, 141);
+            this.label3.Location = new System.Drawing.Point(686, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 8;
@@ -161,7 +150,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(687, 166);
+            this.label4.Location = new System.Drawing.Point(687, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 13);
             this.label4.TabIndex = 10;
@@ -170,7 +159,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(687, 193);
+            this.label5.Location = new System.Drawing.Point(687, 214);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 13);
             this.label5.TabIndex = 11;
@@ -178,21 +167,21 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(806, 164);
+            this.numericUpDown1.Location = new System.Drawing.Point(806, 185);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 12;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(780, 191);
+            this.numericUpDown2.Location = new System.Drawing.Point(780, 212);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(146, 20);
             this.numericUpDown2.TabIndex = 13;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(798, 217);
+            this.textBox3.Location = new System.Drawing.Point(798, 159);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(128, 20);
             this.textBox3.TabIndex = 15;
@@ -200,39 +189,25 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(686, 220);
+            this.label6.Location = new System.Drawing.Point(686, 162);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Jurusan MataKuliah :";
             // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(780, 243);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(146, 20);
-            this.textBox4.TabIndex = 17;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(686, 246);
+            this.label7.Location = new System.Drawing.Point(686, 241);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 13);
             this.label7.TabIndex = 16;
             this.label7.Text = "Kelas MataKuliah :";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(780, 269);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(146, 20);
-            this.textBox5.TabIndex = 19;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(686, 272);
+            this.label8.Location = new System.Drawing.Point(686, 267);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 13);
             this.label8.TabIndex = 18;
@@ -240,7 +215,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(780, 295);
+            this.textBox6.Location = new System.Drawing.Point(780, 290);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(146, 20);
             this.textBox6.TabIndex = 21;
@@ -248,7 +223,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(686, 298);
+            this.label9.Location = new System.Drawing.Point(686, 293);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 13);
             this.label9.TabIndex = 20;
@@ -256,7 +231,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(786, 321);
+            this.textBox7.Location = new System.Drawing.Point(786, 316);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(140, 20);
             this.textBox7.TabIndex = 23;
@@ -264,23 +239,16 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(686, 324);
+            this.label10.Location = new System.Drawing.Point(686, 319);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(101, 13);
             this.label10.TabIndex = 22;
             this.label10.Text = "Ruang MataKuliah :";
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(770, 347);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(156, 20);
-            this.textBox8.TabIndex = 25;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(686, 350);
+            this.label11.Location = new System.Drawing.Point(686, 345);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 13);
             this.label11.TabIndex = 24;
@@ -332,6 +300,7 @@
             this.btnFormMahasiswa.TabIndex = 31;
             this.btnFormMahasiswa.Text = "Form Mahasiswa";
             this.btnFormMahasiswa.UseVisualStyleBackColor = true;
+            this.btnFormMahasiswa.Click += new System.EventHandler(this.btnFormMahasiswa_Click);
             // 
             // btnFormDosen
             // 
@@ -341,6 +310,7 @@
             this.btnFormDosen.TabIndex = 32;
             this.btnFormDosen.Text = "Form Dosen";
             this.btnFormDosen.UseVisualStyleBackColor = true;
+            this.btnFormDosen.Click += new System.EventHandler(this.btnFormDosen_Click);
             // 
             // radioButton2
             // 
@@ -358,44 +328,11 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(191, 40);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(44, 17);
-            this.radioButton3.TabIndex = 34;
+            this.radioButton3.Size = new System.Drawing.Size(95, 17);
+            this.radioButton3.TabIndex = 37;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Hari";
+            this.radioButton3.Text = "Kode Pengajar";
             this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(241, 40);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(44, 17);
-            this.radioButton4.TabIndex = 35;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Jam";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(291, 40);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(57, 17);
-            this.radioButton5.TabIndex = 36;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Ruang";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(354, 40);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(95, 17);
-            this.radioButton6.TabIndex = 37;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Kode Pengajar";
-            this.radioButton6.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -405,15 +342,73 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 38;
             // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(787, 239);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(32, 17);
+            this.radioButton4.TabIndex = 39;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "A";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(822, 239);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(32, 17);
+            this.radioButton5.TabIndex = 40;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "B";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(860, 239);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(32, 17);
+            this.radioButton6.TabIndex = 41;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "C";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Senin",
+            "Selasa",
+            "Rabu",
+            "Kamis",
+            "Jumat",
+            "Sabtu"});
+            this.comboBox2.Location = new System.Drawing.Point(780, 264);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(146, 21);
+            this.comboBox2.TabIndex = 42;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(775, 342);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(151, 21);
+            this.comboBox3.TabIndex = 43;
+            // 
             // FormBAAJadwalMatakuliah
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 440);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.radioButton6);
             this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.btnFormDosen);
@@ -422,15 +417,12 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
@@ -444,8 +436,6 @@
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnInsert);
             this.Name = "FormBAAJadwalMatakuliah";
@@ -463,8 +453,6 @@
 
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnLogout;
@@ -477,15 +465,12 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -495,9 +480,12 @@
         private System.Windows.Forms.Button btnFormDosen;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

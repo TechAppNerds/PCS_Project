@@ -268,6 +268,7 @@
             this.btnFormMahasiswa.TabIndex = 53;
             this.btnFormMahasiswa.Text = "Form Mahasiswa";
             this.btnFormMahasiswa.UseVisualStyleBackColor = true;
+            this.btnFormMahasiswa.Click += new System.EventHandler(this.btnFormMahasiswa_Click);
             // 
             // btnFormMataKuliah
             // 
@@ -277,6 +278,7 @@
             this.btnFormMataKuliah.TabIndex = 54;
             this.btnFormMataKuliah.Text = "Form MataKuliah";
             this.btnFormMataKuliah.UseVisualStyleBackColor = true;
+            this.btnFormMataKuliah.Click += new System.EventHandler(this.btnFormMataKuliah_Click);
             // 
             // btnBackhome
             // 

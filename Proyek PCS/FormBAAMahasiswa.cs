@@ -45,10 +45,8 @@ namespace Proyek_PCS
         {
             try
             {
-                //conn.Open();
                 this.Hide(); new FormBAAHome().ShowDialog();
-                conn.Close();
-                this.Close();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {
@@ -60,10 +58,34 @@ namespace Proyek_PCS
         {
             try
             {
-                //conn.Open();
                 this.Hide(); new FormLogin().ShowDialog();
-                conn.Close();
-                this.Close();
+                conn.Close(); this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFormMataKuliah_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide(); new FormBAAJadwalMatakuliah().ShowDialog();
+                conn.Close(); this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFormDosen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide(); new FormBAADosen().ShowDialog();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {
