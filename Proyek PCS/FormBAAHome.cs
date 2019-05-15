@@ -22,13 +22,28 @@ namespace Proyek_PCS
             conn.ConnectionString= "Data Source="+dts+";User ID="+userid+";password="+pass+"";
         }
 
-        private void btnForm_Jadwal_Matakuliah_Click(object sender, EventArgs e)
+        private void btnForm_Master_Matakuliah_Click(object sender, EventArgs e)
         {
             try
             {
                 conn.Open(); FormBAAMasterMatakuliah.dts = dts;
                 FormBAAMasterMatakuliah.userid = userid; FormBAAMasterMatakuliah.pass = pass;
                 this.Hide(); new FormBAAMasterMatakuliah().ShowDialog();
+                conn.Close(); this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnForm_Jadwal_Matakuliah_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open(); FormBAAJadwalMatakuliah.dts = dts;
+                FormBAAJadwalMatakuliah.userid = userid; FormBAAJadwalMatakuliah.pass = pass;
+                this.Hide(); new FormBAAJadwalMatakuliah().ShowDialog();
                 conn.Close(); this.Close();
             }
             catch (Exception ex)

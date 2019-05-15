@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnForm_Jadwal_Matakuliah = new System.Windows.Forms.Button();
+            this.btnForm_Master_Matakuliah = new System.Windows.Forms.Button();
             this.btnForm_Dosen = new System.Windows.Forms.Button();
             this.btnForm_Mahasiswa = new System.Windows.Forms.Button();
+            this.btnForm_Jadwal_Matakuliah = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnForm_Jadwal_Matakuliah
+            // btnForm_Master_Matakuliah
             // 
-            this.btnForm_Jadwal_Matakuliah.Location = new System.Drawing.Point(75, 50);
-            this.btnForm_Jadwal_Matakuliah.Name = "btnForm_Jadwal_Matakuliah";
-            this.btnForm_Jadwal_Matakuliah.Size = new System.Drawing.Size(132, 23);
-            this.btnForm_Jadwal_Matakuliah.TabIndex = 0;
-            this.btnForm_Jadwal_Matakuliah.Text = "Form Master Matakuliah";
-            this.btnForm_Jadwal_Matakuliah.UseVisualStyleBackColor = true;
-            this.btnForm_Jadwal_Matakuliah.Click += new System.EventHandler(this.btnForm_Jadwal_Matakuliah_Click);
+            this.btnForm_Master_Matakuliah.Location = new System.Drawing.Point(75, 50);
+            this.btnForm_Master_Matakuliah.Name = "btnForm_Master_Matakuliah";
+            this.btnForm_Master_Matakuliah.Size = new System.Drawing.Size(132, 23);
+            this.btnForm_Master_Matakuliah.TabIndex = 0;
+            this.btnForm_Master_Matakuliah.Text = "Form Master Matakuliah";
+            this.btnForm_Master_Matakuliah.UseVisualStyleBackColor = true;
+            this.btnForm_Master_Matakuliah.Click += new System.EventHandler(this.btnForm_Master_Matakuliah_Click);
             // 
             // btnForm_Dosen
             // 
@@ -63,14 +64,25 @@
             this.btnForm_Mahasiswa.UseVisualStyleBackColor = true;
             this.btnForm_Mahasiswa.Click += new System.EventHandler(this.btnForm_Mahasiswa_Click);
             // 
+            // btnForm_Jadwal_Matakuliah
+            // 
+            this.btnForm_Jadwal_Matakuliah.Location = new System.Drawing.Point(75, 137);
+            this.btnForm_Jadwal_Matakuliah.Name = "btnForm_Jadwal_Matakuliah";
+            this.btnForm_Jadwal_Matakuliah.Size = new System.Drawing.Size(132, 23);
+            this.btnForm_Jadwal_Matakuliah.TabIndex = 3;
+            this.btnForm_Jadwal_Matakuliah.Text = "Form Jadwal MataKuliah";
+            this.btnForm_Jadwal_Matakuliah.UseVisualStyleBackColor = true;
+            this.btnForm_Jadwal_Matakuliah.Click += new System.EventHandler(this.btnForm_Jadwal_Matakuliah_Click);
+            // 
             // FormBAAHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnForm_Jadwal_Matakuliah);
             this.Controls.Add(this.btnForm_Mahasiswa);
             this.Controls.Add(this.btnForm_Dosen);
-            this.Controls.Add(this.btnForm_Jadwal_Matakuliah);
+            this.Controls.Add(this.btnForm_Master_Matakuliah);
             this.Name = "FormBAAHome";
             this.Text = "FormBAAHome";
             this.ResumeLayout(false);
@@ -79,8 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnForm_Jadwal_Matakuliah;
+        private System.Windows.Forms.Button btnForm_Master_Matakuliah;
         private System.Windows.Forms.Button btnForm_Dosen;
         private System.Windows.Forms.Button btnForm_Mahasiswa;
+        private System.Windows.Forms.Button btnForm_Jadwal_Matakuliah;
     }
 }
