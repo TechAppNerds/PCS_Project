@@ -87,9 +87,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(277, 87);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(193, 25);
+            this.label13.Size = new System.Drawing.Size(192, 25);
             this.label13.TabIndex = 33;
-            this.label13.Text = "Jadwal Mahasiswa";
+            this.label13.Text = "Master Mahasiswa";
             // 
             // btnBackhome
             // 
@@ -109,6 +109,7 @@
             this.btnFormMataKuliah.TabIndex = 58;
             this.btnFormMataKuliah.Text = "Form MataKuliah";
             this.btnFormMataKuliah.UseVisualStyleBackColor = true;
+            this.btnFormMataKuliah.Click += new System.EventHandler(this.btnFormMataKuliah_Click);
             // 
             // btnFormDosen
             // 
@@ -118,6 +119,7 @@
             this.btnFormDosen.TabIndex = 57;
             this.btnFormDosen.Text = "Form Dosen";
             this.btnFormDosen.UseVisualStyleBackColor = true;
+            this.btnFormDosen.Click += new System.EventHandler(this.btnFormDosen_Click);
             // 
             // btnLogout
             // 
@@ -478,7 +480,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormBAAMahasiswa";
-            this.Text = "FormMahasiswa";
+            this.Text = "FormMasterMahasiswa";
             this.Load += new System.EventHandler(this.FormBAAMahasiswa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

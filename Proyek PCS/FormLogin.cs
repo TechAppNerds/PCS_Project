@@ -19,6 +19,7 @@ namespace Proyek_PCS
             InitializeComponent();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,19 +36,14 @@ namespace Proyek_PCS
                     conn.Close();
                 }
                 conn.Open();
+                FormBAAHome.dts = textBox1.Text; FormBAAHome.userid = textBox2.Text; FormBAAHome.pass = textBox3.Text;
                 this.Hide(); new FormBAAHome().ShowDialog();
-                conn.Close();
-                this.Close();
+                conn.Close(); this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
