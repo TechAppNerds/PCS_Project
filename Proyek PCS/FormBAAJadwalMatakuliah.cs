@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using CrystalDecisions.Shared;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace Proyek_PCS
 {
@@ -121,6 +123,9 @@ namespace Proyek_PCS
                     }
                 }
             }
+            dataGridView1.Columns.Remove("DeleteButton"); DataGridViewButtonColumn delbtn = new DataGridViewButtonColumn();
+            delbtn.FlatStyle = FlatStyle.Standard; delbtn.HeaderText = "ACTION"; delbtn.Name = "DeleteButton";
+            delbtn.Text = "Delete"; delbtn.UseColumnTextForButtonValue = true; dataGridView1.Columns.Add(delbtn);
         }
 
         private void btnBackhome_Click(object sender, EventArgs e)
@@ -172,12 +177,7 @@ namespace Proyek_PCS
             {
                 MessageBox.Show(ex.Message);
             }
-        }        
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }        
+        }   
 
         private void btnMasterMatakuliah_Click(object sender, EventArgs e)
         {
@@ -218,6 +218,53 @@ namespace Proyek_PCS
             waktu = 0;
         }
 
+        //public static Jadwal_Mata_Kuliah cr1;
+        //public static string filename;
+        private void btnCetakJadwalMatakuliah_Click(object sender, EventArgs e)
+        {
+            
+            //jm.Show(); OracleDataAdapter adap = new OracleDataAdapter("SELECT*FROM JADWAL_MATAKULIAH",conn);
+            //DataSet ds = new DataSet(); adap.Fill(ds, "JADWAL_MATAKULIAH");
+            
+            //cr1.SetDataSource(ds); jm.crystalReportViewer1.ReportSource = cr1; jm.crystalReportViewer1.Refresh();
+
+            //string filename = System.Windows.Forms.Application.StartupPath + "\\Jadwal_Mata_Kuliah.rpt";
+            //cr1.Load(filename);
+            //cr1.SummaryInfo.ReportTitle = "JADWAL MATA KULIAH";
+            //cr1.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, cr1.SummaryInfo.ReportTitle + ".pdf");
+            //jm.crystalReportViewer1.ReportSource = cr1; jm.crystalReportViewer1.Refresh();
+
+            try
+            {
+                Jadwal_Mata_Kuliah_Viewer jm = new Jadwal_Mata_Kuliah_Viewer();
+                Jadwal_Mata_Kuliah objRpt = new Jadwal_Mata_Kuliah();
+                string sql = "SELECT*FROM JADWAL_MATAKULIAH"; OracleDataAdapter da = new OracleDataAdapter(sql, conn);
+                DataSetJMK dsj = new DataSetJMK(); da.Fill(dsj, "JADWAL_MATAKULIAH"); MessageBox.Show(dsj.Tables[1].Rows.Count.ToString());                
+                objRpt.SetDataSource(dsj.Tables[1]);
+                jm.crystalReportViewer1.ReportSource = objRpt;
+                jm.crystalReportViewer1.Refresh();
+
+                ExportOptions CrExportOptions;
+                DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                CrDiskFileDestinationOptions.DiskFileName = "C:\\Users\\Administrator\\Desktop\\Jadwal Matakuliah Proyek PCS.pdf";
+                //System.IO.Path.GetTempPath(diskf);
+
+                CrExportOptions = objRpt.ExportOptions;
+                {
+                    CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                    CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                    CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                    CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                }
+                objRpt.Export();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked == true || radioButton2.Checked == true || radioButton3.Checked == true || radioButton4.Checked == true)
@@ -237,7 +284,7 @@ namespace Proyek_PCS
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            index = e.RowIndex; txtSearch.Enabled = false;
+            index = e.RowIndex;
             if (dataGridView1.Columns[e.ColumnIndex].Name=="DeleteButton")
             {
                 OracleTransaction obTrans = conn.BeginTransaction();
@@ -249,7 +296,7 @@ namespace Proyek_PCS
                         if (cekdelete == true)
                         {
                             OracleCommand cmd = new OracleCommand(); cmd.Connection = conn;
-                            string nokode = dataGridView1.Rows[index].Cells[0].Value.ToString(); MessageBox.Show(nokode);                            
+                            string nokode = dataGridView1.Rows[index].Cells[0].Value.ToString();
                             cmd.CommandText = "DELETE FROM JADWAL_MATAKULIAH WHERE KODE_MK='" + nokode + "' AND KELAS_MK='" +
                                 dataGridView1.Rows[index].Cells[5].Value + "'"; cmd.ExecuteNonQuery(); DatabaseRefresh();
                         } obTrans.Commit(); txtSearch.Enabled = false;

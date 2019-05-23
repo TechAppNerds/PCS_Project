@@ -29,19 +29,30 @@ namespace Proyek_PCS
         {
             conn.ConnectionString = "Data Source=" + dts + ";User ID=" + userid + ";password=" + pass + "";
             try
-            {                
-                if (!txtUsername.Text.Equals(userid))
+            {
+                if (String.IsNullOrEmpty(txtUsername.Text))
                 {
-                    MessageBox.Show("Field Username Salah"); FormBAAJadwalMatakuliah.cekdelete = false; this.Hide(); this.Close();
+                    MessageBox.Show("Field Username Wajib Diisi");
                 }
-                if (!txtPassword.Text.Equals(pass))
+                if (String.IsNullOrEmpty(txtPassword.Text))
                 {
-                    MessageBox.Show("Field Password Salah"); FormBAAJadwalMatakuliah.cekdelete = false; this.Hide(); this.Close();
+                    MessageBox.Show("Field Password Wajib Diisi");
                 }
-                if (txtUsername.Text.Equals(userid) && txtPassword.Text.Equals(pass))
+                else if (!String.IsNullOrEmpty(txtUsername.Text)&&!String.IsNullOrEmpty(txtPassword.Text))
                 {
-                    FormBAAJadwalMatakuliah.cekdelete = true; this.Hide(); this.Close();
-                }
+                    if (!txtUsername.Text.Equals(userid))
+                    {
+                        MessageBox.Show("Field Username Salah"); FormBAAJadwalMatakuliah.cekdelete = false; this.Hide(); this.Close();
+                    }
+                    if (!txtPassword.Text.Equals(pass))
+                    {
+                        MessageBox.Show("Field Password Salah"); FormBAAJadwalMatakuliah.cekdelete = false; this.Hide(); this.Close();
+                    }
+                    if (txtUsername.Text.Equals(userid) && txtPassword.Text.Equals(pass))
+                    {
+                        FormBAAJadwalMatakuliah.cekdelete = true; this.Hide(); this.Close();
+                    }
+                }                
             }
             catch (Exception ex)
             {

@@ -250,34 +250,27 @@ namespace Proyek_PCS
                     if (radioButton4.Checked == true) { k = "A"; }
                     if (radioButton5.Checked == true) { k = "B"; }
                     if (radioButton6.Checked == true) { k = "C"; }
-                    OracleDataAdapter da = new OracleDataAdapter("SELECT COUNT(*) FROM JADWAL_MATAKULIAH WHERE "
-                        +"KODE_MK='"+dataGridView1.Rows[index].Cells[0].Value+"' AND KELAS_MK='"+k+ "'", conn);
-                    DataSet dsc = new DataSet(); da.Fill(dsc);
-                    if (Convert.ToInt32(dsc.Tables[0].Rows[0][0])>0){MessageBox.Show("Mata Kuliah sudah ada di Jadwal");}
-                    else
+                    if (textBox2.Text == "") { MessageBox.Show("Nama Mata Kuliah Wajib Diisi"); }
+                    if (textBox3.Text == "") { MessageBox.Show("Jurusan Mata Kuliah Wajib Diisi"); }
+                    if (radioButton4.Checked == false && radioButton5.Checked == false && radioButton6.Checked == false)
+                    { MessageBox.Show("Kelas Mata Kuliah Wajib Dipilih"); }
+                    if (String.IsNullOrEmpty(comboBox2.SelectedItem+"")){MessageBox.Show("Hari Mata Kuliah wajib diisi");}
+                    if (String.IsNullOrEmpty(textBox5.Text)){MessageBox.Show("Tempat Ruang Matakuliah Wajib Diisi");}
+                    else if (textBox5.Text!=""&& !String.IsNullOrEmpty(textBox2.Text) && textBox3.Text != "" && 
+                        !String.IsNullOrEmpty(comboBox2.SelectedItem + "") &&
+                    (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true))
                     {
-                        if (textBox2.Text == "") { MessageBox.Show("Nama Mata Kuliah Wajib Diisi"); }
-                        if (textBox3.Text == "") { MessageBox.Show("Jurusan Mata Kuliah Wajib Diisi"); }
-                        if (radioButton4.Checked == false && radioButton5.Checked == false && radioButton6.Checked == false)
-                        { MessageBox.Show("Kelas Mata Kuliah Wajib Dipilih"); }
-                        if (String.IsNullOrEmpty(comboBox2.SelectedItem+"")){MessageBox.Show("Hari Mata Kuliah wajib diisi");}
-                        if (String.IsNullOrEmpty(textBox5.Text)){MessageBox.Show("Tempat Ruang Matakuliah Wajib Diisi");}
-                        else if (textBox5.Text!=""&& !String.IsNullOrEmpty(textBox2.Text) && textBox3.Text != "" && 
-                            !String.IsNullOrEmpty(comboBox2.SelectedItem + "") &&
-                        (radioButton4.Checked == true || radioButton5.Checked == true || radioButton6.Checked == true))
-                        {
-                            string j = ""; string m = "";
-                            if (numericUpDown3.Value < 10){ j = "0" + numericUpDown3.Value + ":"; }
-                            else { j = numericUpDown3.Value + ":"; }
-                            if (numericUpDown4.Value<=9){m = "0" + numericUpDown4.Value;}
-                            else { m = numericUpDown4.Value.ToString();}
-                            cmd.CommandText = "INSERT INTO JADWAL_MATAKULIAH VALUES('"+dataGridView1.Rows[index].Cells[0].Value+
-                                "','"+ dataGridView1.Rows[index].Cells[1].Value + "','"+ dataGridView1.Rows[index].Cells[2].Value
-                                + "',"+ dataGridView1.Rows[index].Cells[3].Value + ","+ dataGridView1.Rows[index].Cells[4].Value 
-                                + ",'"+k+"','"+comboBox2.SelectedItem+"','"+j+m+"',UPPER('"+textBox5.Text+"'||'-'||'"+numericUpDown5.Value+
-                                "'||'0'||'"+numericUpDown6.Value+"'),'"+comboBox3.SelectedValue+"')";
-                            cmd.ExecuteNonQuery(); DatabaseRefresh(); textBox1.Enabled = false;
-                        }
+                        string j = ""; string m = "";
+                        if (numericUpDown3.Value < 10){ j = "0" + numericUpDown3.Value + ":"; }
+                        else { j = numericUpDown3.Value + ":"; }
+                        if (numericUpDown4.Value<=9){m = "0" + numericUpDown4.Value;}
+                        else { m = numericUpDown4.Value.ToString();}
+                        cmd.CommandText = "INSERT INTO JADWAL_MATAKULIAH VALUES('"+dataGridView1.Rows[index].Cells[0].Value+
+                            "','"+ dataGridView1.Rows[index].Cells[1].Value + "','"+ dataGridView1.Rows[index].Cells[2].Value
+                            + "',"+ dataGridView1.Rows[index].Cells[3].Value + ","+ dataGridView1.Rows[index].Cells[4].Value 
+                            + ",'"+k+"','"+comboBox2.SelectedItem+"','"+j+m+"',UPPER('"+textBox5.Text+"'||'-'||'"+numericUpDown5.Value+
+                            "'||'0'||'"+numericUpDown6.Value+"'),'"+comboBox3.SelectedValue+"')";
+                        cmd.ExecuteNonQuery(); DatabaseRefresh(); textBox1.Enabled = false;
                     } obTrans.Commit();
                 }
             }
