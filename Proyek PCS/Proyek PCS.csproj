@@ -88,6 +88,42 @@
     <Compile Include="FormBAADosen.Designer.cs">
       <DependentUpon>FormBAADosen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDosenHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDosenHome.Designer.cs">
+      <DependentUpon>FormDosenHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDosenJadwal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDosenJadwal.Designer.cs">
+      <DependentUpon>FormDosenJadwal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMahasiswaLaporanMatakuliah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMahasiswaLaporanMatakuliah.Designer.cs">
+      <DependentUpon>FormMahasiswaLaporanMatakuliah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMahasiswaMatakuliah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMahasiswaMatakuliah.Designer.cs">
+      <DependentUpon>FormMahasiswaMatakuliah.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMahasiswaProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMahasiswaProfile.Designer.cs">
+      <DependentUpon>FormMahasiswaProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDosenProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDosenProfile.Designer.cs">
+      <DependentUpon>FormDosenProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +135,18 @@
     </Compile>
     <Compile Include="FormBAAMahasiswa.Designer.cs">
       <DependentUpon>FormBAAMahasiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginUserSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginUserSQL.Designer.cs">
+      <DependentUpon>FormLoginUserSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMahasiswaHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMahasiswaHome.Designer.cs">
+      <DependentUpon>FormMahasiswaHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Jadwal Mata Kuliah Viewer.cs">
       <SubType>Form</SubType>
@@ -129,11 +177,35 @@
     <EmbeddedResource Include="FormBAADosen.resx">
       <DependentUpon>FormBAADosen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDosenHome.resx">
+      <DependentUpon>FormDosenHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDosenJadwal.resx">
+      <DependentUpon>FormDosenJadwal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMahasiswaLaporanMatakuliah.resx">
+      <DependentUpon>FormMahasiswaLaporanMatakuliah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMahasiswaMataKuliah.resx">
+      <DependentUpon>FormMahasiswaMatakuliah.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMahasiswaProfile.resx">
+      <DependentUpon>FormMahasiswaProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDosenProfile.resx">
+      <DependentUpon>FormDosenProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBAAMahasiswa.resx">
       <DependentUpon>FormBAAMahasiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginUserSQL.resx">
+      <DependentUpon>FormLoginUserSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMahasiswaHome.resx">
+      <DependentUpon>FormMahasiswaHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Jadwal Mata Kuliah Viewer.resx">
       <DependentUpon>Jadwal Mata Kuliah Viewer.cs</DependentUpon>

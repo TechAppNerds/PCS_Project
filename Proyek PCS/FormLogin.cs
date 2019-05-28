@@ -16,10 +16,7 @@ namespace Proyek_PCS
         public static OracleConnection conn;
         public FormLogin()
         {
-            InitializeComponent();
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
-
+            InitializeComponent(); conn = new OracleConnection();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,9 +32,8 @@ namespace Proyek_PCS
                 {
                     conn.Close();
                 }
-                conn.Open();
-                FormBAAHome.dts = textBox1.Text; FormBAAHome.userid = textBox2.Text; FormBAAHome.pass = textBox3.Text;
-                this.Hide(); new FormBAAHome().ShowDialog();
+                conn.Open(); FormLoginUserSQL.dts = textBox1.Text; FormLoginUserSQL.userid = textBox2.Text;
+                FormLoginUserSQL.pass = textBox3.Text; this.Hide(); new FormLoginUserSQL().ShowDialog();
                 conn.Close(); this.Close();
             }
             catch (Exception ex)
